@@ -11,7 +11,7 @@ process.env.ARCH = process.env.ARCH || process.arch
 builder({
     dir: true,
     mac: ['pkg', 'zip'],
-    universal: true,
+    arm64: process.env.ARCH === 'arm64',
     config: {
         extraMetadata: {
             version: vars.version,
