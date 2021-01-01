@@ -21,16 +21,14 @@ jobs:
         rm app/node_modules/.yarn-integrity
         yarn
 
-    - name: Build native deps
-      run: scripts/build-native.js
+    - name: Patch packages
+      run: ./node_modules/.bin/patch-package
 
     - name: Webpack
       run: yarn run build
 
     - name: Prepackage plugins
       run: scripts/prepackage-plugins.js
-
-    - run: sed -i '' 's/updateInfo = await/\/\/updateInfo = await/g' node_modules/app-builder-lib/out/targets/ArchiveTarget.js
 
     - name: Build and sign packages
       run: scripts/build-macos.js
