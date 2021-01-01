@@ -10,7 +10,8 @@
   "version": "1.0.0-alpha.1",
   "scripts": {
     "build": "webpack --progress --color --display-modules",
-    "watch": "webpack --progress --color --watch"
+    "watch": "webpack --progress --color --watch",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@angular/animations": "^9.1.9",
@@ -49,6 +50,7 @@
     "@types/mz": "0.0.32",
     "@types/node": "14.14.14",
     "node-abi": "2.19.3",
+    "patch-package": "^6.2.2",
     "source-map-support": "^0.5.19"
   },
   "peerDependencies": {

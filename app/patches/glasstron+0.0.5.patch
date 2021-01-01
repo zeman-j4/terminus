@@ -1,0 +1,15 @@
+diff --git a/node_modules/glasstron/binding.js b/node_modules/glasstron/binding.js
+index f723a9c..15e5d91 100644
+--- a/node_modules/glasstron/binding.js
++++ b/node_modules/glasstron/binding.js
+@@ -33,7 +33,9 @@ async function bindings(){
+ 	}
+ 
+ 	await fs.rename(_path.resolve(__dirname, "build", "Release", "dwm.node"), _path.resolve(__dirname, "native", "dwm.node"));
+-	await removeRecursive(_path.resolve(__dirname, "build"));
++	try {
++		await removeRecursive(_path.resolve(__dirname, "build"));
++	} catch(e) {}
+ 	console.log("Done!");
+ }
+ 

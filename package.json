@@ -72,7 +72,7 @@
     "prod": "cross-env TERMINUS_DEV=1 electron app",
     "docs": "typedoc --out docs/api terminus-core/src && typedoc --out docs/api/terminal --tsconfig terminus-terminal/tsconfig.typings.json terminus-terminal/src && typedoc --out docs/api/settings --tsconfig terminus-settings/tsconfig.typings.json terminus-settings/src",
     "lint": "eslint --ext ts */src */lib",
-    "postinstall": "node ./scripts/install-deps.js"
+    "postinstall": "patch-package; node ./scripts/install-deps.js"
   },
   "repository": "eugeny/terminus",
   "author": "Eugene Pankov",

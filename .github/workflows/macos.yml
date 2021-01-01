@@ -21,9 +21,6 @@ jobs:
         rm app/node_modules/.yarn-integrity
         yarn
 
-    - name: Patch packages
-      run: ./node_modules/.bin/patch-package
-
     - name: Webpack
       run: yarn run build
 
