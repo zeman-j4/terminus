@@ -68,6 +68,7 @@ module.exports = {
         '@terminus-term/node-pty',
         'windows-process-tree',
         'os',
+        'yargs',
         /^rxjs/,
         /^@angular/,
         /^@ng-bootstrap/,

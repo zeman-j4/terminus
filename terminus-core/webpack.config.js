@@ -53,6 +53,7 @@ module.exports = {
         'os',
         'path',
         'windows-native-registry',
+        'yargs',
         /^rxjs/,
         /^@angular/,
         /^@ng-bootstrap/,
