@@ -35,7 +35,7 @@
     "npm": "6",
     "path": "0.12.7",
     "rxjs": "^6.5.5",
-    "yargs": "^15.4.1",
+    "yargs": "^16.2.0",
     "zone.js": "^0.11.3"
   },
   "optionalDependencies": {
