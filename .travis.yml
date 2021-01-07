@@ -25,12 +25,8 @@ jobs:
 dist: xenial
 sudo: false
 
-addons:
-  apt:
-    packages:
-    - rpm
-    - yarn
-    - libsecret-1-dev
-    sources:
-    - sourceline: 'deb https://dl.yarnpkg.com/debian/ stable main'
-      key_url: 'https://dl.yarnpkg.com/debian/pubkey.gpg'
+dx-scan:
+  stage: build
+  image: dxheroes/dx-scanner:latest
+  script:
+    - dx-scanner run --ci
