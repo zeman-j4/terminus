@@ -3,6 +3,7 @@ node_js: 12
 
 stages:
   - Build
+  - Test
   - name: Docs
     if: branch = master
 
@@ -21,12 +22,11 @@ jobs:
         - yarn
         - yarn run docs
         - rsync -e "ssh -o StrictHostKeyChecking=no" -arv docs/api/ root@ajenti.org:/srv/terminus-docs/
+    - stage: Test
+      name: DX Scanner
+      image: dxheroes/dx-scanner:latest
+      script:
+        - dx-scanner run --ci
 
 dist: xenial
 sudo: false
-
-dx-scan:
-  stage: build
-  image: dxheroes/dx-scanner:latest
-  script:
-    - dx-scanner run --ci
