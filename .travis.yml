@@ -26,9 +26,8 @@ jobs:
         - rsync -e "ssh -o StrictHostKeyChecking=no" -arv docs/api/ root@ajenti.org:/srv/terminus-docs/
     - stage: Test
       name: DX Scanner
-      image: dxheroes/dx-scanner:latest
       script:
-        - dx-scanner run --ci
+        - docker run dxheroes/dx-scanner:latest dx-scanner run --ci
 
 dist: xenial
 sudo: false
